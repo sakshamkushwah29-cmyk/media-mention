@@ -1,0 +1,318 @@
+/* index.css - Rebuilt Thinkin Birds Design System Styles */
+
+/* Font Definitions */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/65829f62b397476447c77014_Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/65829f60bffe0e00d23c869c_Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/65829f61372420389ec25cf8_Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/65829f613553da31503ee1a9_Gilroy-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/65829f618850065bae42c975_Gilroy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mortend';
+  src: url('https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/65608b329e12fac4cc37ad98_MORTEND%20BOLD.OTF') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Global Reset overrides */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #282829;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Custom Theme Colors */
+:root {
+  --color-red: #9762fd;
+  --color-dark: #282829;
+  --color-peach: #ff715b;
+  --color-peach-light: #ffbba6;
+  --color-gray-bg: #fafafa;
+  
+  /* Override template purples/indigos with brand reds globally */
+  --untitled-ui-primary50: #f9f5ff;
+  --untitled-ui-primary100: #f4ebff;
+  --untitled-ui-primary300: #d6bbfb;
+  --untitled-ui-primary500: #ff715b;
+  --untitled-ui-primary600: #9762fd; /* Primary Brand Red */
+  --untitled-ui-primary700: #7f56d9; /* Darker Red */
+  --untitled-ui-primary800: #53389e; /* Even Darker Red */
+}
+
+/* Fix Display Fonts */
+h1, h2, h3, .mainusp, .waves---mega-heading-1, .text-span-3 {
+  font-family: 'Mortend', 'Impact', 'Arial Black', sans-serif !important;
+  text-transform: uppercase;
+}
+
+h4, h5, h6, p, a, div, span, button {
+  font-family: 'Gilroy', -apple-system, sans-serif;
+}
+
+.text-3, .text-5, .waves---subtitle {
+  font-family: 'Gilroy', -apple-system, sans-serif;
+  font-weight: 500;
+}
+
+.heading-2-you-re-in-good-company {
+  font-family: 'Mortend', 'Impact', sans-serif !important;
+}
+
+/* Smooth transitions on hover items */
+a, button, .button-inner, .work-card, .uui-faq01_question {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Infinite Horizontal Marquee Carousel */
+.image-strip-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: var(--color-gray-bg);
+  padding: 20px 0;
+  border-top: 2px solid var(--color-dark);
+  border-bottom: 2px solid var(--color-dark);
+}
+
+.image-strip {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+.image-strip:hover {
+  animation-play-state: paused;
+}
+
+.image-item {
+  flex-shrink: 0;
+  width: 380px;
+  height: 240px;
+  margin: 0 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--color-dark);
+  box-shadow: 4px 4px 0px var(--color-dark);
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Case study dynamic class mapping for specific styles */
+.case-study-page .div-container.color {
+  background-color: var(--color-gray-bg);
+  border-bottom: 2px solid var(--color-dark);
+}
+
+.case-study-page .div-container.color.green {
+  background-color: #e3eedc !important; /* Soft sage green */
+  color: #2e5917;
+}
+
+.case-study-page .div-container.color.peach {
+  background-color: #faebd7 !important; /* Soft peach */
+  color: #8c4227;
+}
+
+.case-study-page .div-container.color.blue {
+  background-color: #e0f2fe !important; /* Soft sky blue */
+  color: #0369a1;
+}
+
+.case-study-page .div-container.color.yellow {
+  background-color: #fef9c3 !important; /* Soft yellow */
+  color: #854d0e;
+}
+
+.case-study-page .div-container.color.pink {
+  background-color: #fce7f3 !important; /* Soft pink */
+  color: #9d174d;
+}
+
+.case-study-page .div-container.color.purple {
+  background-color: #f3e8ff !important; /* Soft purple */
+  color: #6b21a8;
+}
+
+/* General Layout helpers */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 2px solid var(--color-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.footer {
+  background: var(--color-dark);
+  color: white;
+  padding: 60px 24px;
+  text-align: center;
+  border-top: 2px solid var(--color-dark);
+}
+
+.footer .nav-link {
+  color: white !important;
+  text-decoration: none;
+}
+
+.footer .nav-link:hover {
+  color: var(--color-red) !important;
+}
+
+/* Accordion Styling overrides */
+.faq-item-container {
+  border-bottom: 2px solid var(--color-dark);
+  padding: 24px 0;
+}
+
+.faq-question-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.faq-answer-panel {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-answer-text {
+  padding-top: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Force red template colors and backgrounds to use the new primary purple #9762fd theme globally */
+:root {
+  --primary-red: #9762fd !important;
+  --color-red: #9762fd !important;
+  --untitled-ui-primary600: #9762fd !important;
+}
+
+.redbg, .redbg.memebership, .redbg.in-dropdown, .redbg.pricing, .redbg.white, .button-inner.p3_small.herowhite.redbg {
+  background-color: #9762fd !important;
+}
+.red {
+  color: #9762fd !important;
+}
+.redbg:hover {
+  background-color: #7f56d9 !important;
+}
+.button-inner.p3_small.herowhite.red {
+  color: #9762fd !important;
+}
+.button-inner.p3_small.herowhite.red.inside-nav {
+  background-color: #9762fd !important;
+  color: white !important;
+}
+
+/* Membership benefits section background grid in #9762fd */
+.membership-benefits {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 80 0 L 0 0 0 80' fill='none' stroke='%239762fd' stroke-width='2' stroke-opacity='0.4'/%3E%3C/svg%3E") !important;
+  background-size: 80px 80px !important;
+  background-attachment: fixed !important;
+}
+
+/* Membership card badge headers in #9762fd */
+.redbox {
+  background-image: none !important;
+  background-color: #9762fd !important;
+  border-radius: 4px 4px 28px 4px !important;
+  box-shadow: 0 4px 18px rgba(151, 98, 253, 0.3) !important;
+}
+
+.red-stroke-box {
+  border-top-color: #9762fd !important;
+  border-bottom-color: #9762fd !important;
+}
+
+.box-holder.our-works.testimonial-head {
+  background-color: #9762fd !important;
+}
+
+/* Force all small star, polygon, and vector icons across all sections to #9762fd purple */
+.vectors-wrapper-4,
+.vectors-wrapper-3,
+.accordion-icon_component.faq img,
+.uui-testimonial16_customer-image-2.star,
+img[src*="Star"],
+img[src*="Polygon"],
+svg path[fill="#DC3438"],
+svg path[fill="#dc3438"] {
+  fill: #9762fd !important;
+}
+
+.uui-testimonial16_rating-icon-2 svg path,
+.accordion-icon_component svg path {
+  fill: #9762fd !important;
+}
+
+/* Main hero heading line height adjusted down by 30% */
+.mainusp {
+  line-height: 1.26 !important;
+}
+
+/* Ensure each service item in the header badge stays on a single line */
+.text-inside-vrtl {
+  white-space: nowrap !important;
+  font-size: clamp(11px, 1.2vw, 14px) !important;
+}
+
+.visual {
+  white-space: nowrap !important;
+  height: auto !important;
+  padding: 6px 16px !important;
+}
