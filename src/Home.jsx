@@ -1016,52 +1016,9 @@ export default function Home() {
           </h1>
         </div>
         <div className="uui-faq01_accordion black">
-          <div data-w-id="4a4c92c4-748a-eaa7-67c0-5d5398241c30" className="uui-faq01_question faq">
+          <div className="uui-faq01_question faq">
             <div className="text-7 faq">
-              <strong className="bold-text faq">              How quickly can I get started? Is there a limit to the no. of requests?
-</strong>
-            </div>
-            <div className="uui-faq01_icon-wrapper">
-              <div className="accordion-icon_component faq">
-                <img src={polygonPurple} loading="lazy" alt="" />
-              </div>
-            </div>
-          </div>
-          <div style={{ height: "0px" }} className="uui-faq01_answer">
-            <div className="text-5 in-what-we-do faq">
-              Within 24 hours! We set sail for our clients at an industry-defying pace.
-              <br />
-              <br />
-              No, the sky is the limit. Just park your requests on Trello and we will clock them all, nailing one at a time. If you’ve bagged our Eagle Plan, we will charge at your request two at a time.
-            </div>
-          </div>
-        </div>
-        <div className="uui-faq01_accordion black">
-          <div data-w-id="4a4c92c4-748a-eaa7-67c0-5d5398241c3f" className="uui-faq01_question">
-            <div className="text-7 faq">
-              <strong className="bold-text faq">              How many designs can I expect in a month?
-</strong>
-            </div>
-            <div className="uui-faq01_icon-wrapper">
-              <div className="accordion-icon_component faq">
-                <img src={polygonPurple} loading="lazy" alt="" />
-              </div>
-            </div>
-          </div>
-          <div style={{ height: "0px" }} className="uui-faq01_answer">
-            <div className="text-5 in-what-we-do faq">
-              It depends on how many requests you share and how bulky they are. But our flock of designers is one of the swiftest in the industry. We dispatch fresh work every 24-48 hours. Just keep your end of the deal with an updated backlog and timely feedback. And we’ll continue to unleash mounds of magic for your biz every month.
-              <br />
-              <br />
-              For instance, we can crack a social media post in as little as a few hours. A heftier project like rebranding, website revamp, etc. usually calls for a week or two of your patience.
-            </div>
-          </div>
-        </div>
-        <div className="uui-faq01_accordion black">
-          <div data-w-id="4a4c92c4-748a-eaa7-67c0-5d5398241c4e" className="uui-faq01_question">
-            <div className="text-7 faq">
-              <strong className="bold-text faq">              Why shouldn’t I just hire in-house designers?
-</strong>
+              <strong className="bold-text faq">What happens before content creation begins?</strong>
             </div>
             <div className="uui-faq01_icon-wrapper">
               <div className="accordion-icon_component faq">
@@ -1071,78 +1028,97 @@ export default function Home() {
           </div>
           <div style={{ height: "0px" }} className="uui-faq01_answer">
             <div className="text-5 in-what-we-do faq">
-              We help your venture soar higher than ever with access to a world-class team of brand strategists and designers. You also gain the freedom to scale up or down as fitting.
-              <br />
-              ‍
-              <br />
-              Hiring a full-time senior designer like the folks at Thinkin’ Birds would cost you around $100k plus benefits. Don’t you break a leg digging for a design whiz who can round up craft mastery end-to-end!
-              <br />
-              <br />
-              <em>              We come at a fraction of the price with insane overnight flexibility.
-</em>
+              Every partnership starts with a two-week onboarding phase. We deep dive into your brand, audience, competitors, positioning, communication style, and business goals. This is where we define your brand’s vibe, tone, and creative direction—so every piece of content feels intentional from day one.
             </div>
           </div>
         </div>
+
         <div className="uui-faq01_accordion black">
-          <div data-w-id="4a4c92c4-748a-eaa7-67c0-5d5398241c63" className="uui-faq01_question">
+          <div className="uui-faq01_question faq">
             <div className="text-7 faq">
-              <strong className="bold-text faq">              What if I am not happy with the designs? Are there any refunds?
-</strong>
+              <strong className="bold-text faq">How involved do I need to be?</strong>
             </div>
             <div className="uui-faq01_icon-wrapper">
               <div className="accordion-icon_component faq">
-                <img src={polygonPurple} loading="lazy" alt="" />
+                <img src={polygonPurple} loading="lazy" alt="" className="image-7" />
               </div>
             </div>
           </div>
           <div style={{ height: "0px" }} className="uui-faq01_answer">
             <div className="text-5 in-what-we-do faq">
-              No problem, we will gladly alter your piece and send a fresh specimen per your brief. Unlimited revisions, don’t you forget!
-              <br />
-              <br />
-              Also, we do not issue refunds owing to the high-quality nature of our produce. But you can easily get your bird’s-eye view of our services by dabbling with our 3-day trial.
-              <em>              We boast a record 100% satisfaction rate across all the 250+ brands we have allied with.
-</em>
+              Mainly during the important decisions. Once the partnership begins, we spend the first two weeks understanding your brand in depth through our onboarding process. After that, the strategy, planning, and execution are handled by us, while you stay involved through approvals and key checkpoints—not everyday management.
             </div>
           </div>
         </div>
+
         <div className="uui-faq01_accordion black">
-          <div data-w-id="4a4c92c4-748a-eaa7-67c0-5d5398241c75" className="uui-faq01_question">
+          <div className="uui-faq01_question faq">
             <div className="text-7 faq">
-              <strong className="bold-text faq">              Do you do solo design projects?
-</strong>
+              <strong className="bold-text faq">How do you make sure the content actually feels like our brand?</strong>
             </div>
             <div className="uui-faq01_icon-wrapper">
               <div className="accordion-icon_component faq">
-                <img src={polygonPurple} loading="lazy" alt="" />
+                <img src={polygonPurple} loading="lazy" alt="" className="image-7" />
               </div>
             </div>
           </div>
           <div style={{ height: "0px" }} className="uui-faq01_answer">
             <div className="text-5 in-what-we-do faq">
-              Yes, we do pick up independent projects which are not subscription-based. Please poke us at xyz@thinkinbirds.com to learn more.
+              We don’t start by creating—we start by understanding. Your brand voice, audience, goals, and personality become the foundation of everything we produce. The aim isn’t just good-looking content; it’s content that genuinely feels like your brand.
             </div>
           </div>
         </div>
+
         <div className="uui-faq01_accordion black">
-          <div data-w-id="4a4c92c4-748a-eaa7-67c0-5d5398241c81" className="uui-faq01_question">
+          <div className="uui-faq01_question faq">
             <div className="text-7 faq">
-              <strong className="bold-text faq">              Who owns the creative output for my project?
-</strong>
+              <strong className="bold-text faq">How do you decide what content to create?</strong>
             </div>
             <div className="uui-faq01_icon-wrapper">
               <div className="accordion-icon_component faq">
-                <img src={polygonPurple} loading="lazy" alt="" />
+                <img src={polygonPurple} loading="lazy" alt="" className="image-7" />
               </div>
             </div>
           </div>
           <div style={{ height: "0px" }} className="uui-faq01_answer">
             <div className="text-5 in-what-we-do faq">
-              All the creative output produced for you by Thinkin’ Birds belongs to you. We also happily hand out the native files for everything we design, upon request.
-              <br />
-              ‍
-              <br />
-              Our designers unleash their magic in Adobe Creative Suite for all your projects (they swap to Figma for digitally based ones).
+              Nothing is created randomly. Every idea is backed by your business goals, audience behavior, platform trends, and content strategy. We focus on creating content that not only looks great but also serves a purpose.
+            </div>
+          </div>
+        </div>
+
+        <div className="uui-faq01_accordion black">
+          <div className="uui-faq01_question faq">
+            <div className="text-7 faq">
+              <strong className="bold-text faq">How do revisions work?</strong>
+            </div>
+            <div className="uui-faq01_icon-wrapper">
+              <div className="accordion-icon_component faq">
+                <img src={polygonPurple} loading="lazy" alt="" className="image-7" />
+              </div>
+            </div>
+          </div>
+          <div style={{ height: "0px" }} className="uui-faq01_answer">
+            <div className="text-5 in-what-we-do faq">
+              Before we begin, we mutually decide the number of revision rounds and include them in the agreement. Feedback is collected in a structured way, and revisions are carried out within the agreed scope to keep the creative process smooth, efficient, and transparent.
+            </div>
+          </div>
+        </div>
+
+        <div className="uui-faq01_accordion black">
+          <div className="uui-faq01_question faq">
+            <div className="text-7 faq">
+              <strong className="bold-text faq">How do you ensure consistency across all our content?</strong>
+            </div>
+            <div className="uui-faq01_icon-wrapper">
+              <div className="accordion-icon_component faq">
+                <img src={polygonPurple} loading="lazy" alt="" className="image-7" />
+              </div>
+            </div>
+          </div>
+          <div style={{ height: "0px" }} className="uui-faq01_answer">
+            <div className="text-5 in-what-we-do faq">
+              Consistency comes from systems, not luck. We establish clear creative guidelines during onboarding and follow a structured content workflow throughout the partnership. This ensures every reel, design, campaign, and piece of communication feels like it comes from the same brand.
             </div>
           </div>
         </div>
