@@ -665,12 +665,11 @@ export default function Home() {
             </div>
             <div className="redbox">
               <h5 className="text-4 heading">
-                <strong>                Unlimited designs
-</strong>
+                <strong>Fresh &gt; Forced</strong>
               </h5>
             </div>
             <p className="text-5 membershipbenefits">
-              Queue up as many requests as you’d like on Trello. We’ll keep on delivering one by one.
+              Ideas that feel original, not like they came from a trend template.
             </p>
           </div>
           <div className="membership-content-holder">
@@ -679,12 +678,11 @@ export default function Home() {
             </div>
             <div className="redbox">
               <h5 className="text-4 heading">
-                <strong>                Elite designers
-</strong>
+                <strong>Quick, Never Rushed</strong>
               </h5>
             </div>
             <p className="text-5 membershipbenefits">
-              After decades of fostering diverse brands, our artists flaunt magical design skills.
+              Fast timelines without cutting corners.
             </p>
           </div>
           <div className="membership-content-holder">
@@ -693,12 +691,11 @@ export default function Home() {
             </div>
             <div className="redbox">
               <h5 className="text-4 heading">
-                <strong>                Unlimited revisions
-</strong>
+                <strong>Made to Stick</strong>
               </h5>
             </div>
             <p className="text-5 membershipbenefits">
-              Your designer will keep on tweaking until the designs are pitch-perfect.
+              Creative people remember, not just scroll past.
             </p>
           </div>
         </div>
@@ -709,12 +706,11 @@ export default function Home() {
             </div>
             <div className="redbox">
               <h5 className="text-4 heading">
-                <strong>                Flexible &amp; Scalable
-</strong>
+                <strong>Less Back &amp; Forth</strong>
               </h5>
             </div>
             <p className="text-5 membershipbenefits">
-              Big launch coming up? Get more creators from our pack to ruffle for you. Pause or cancel anytime.
+              Clear communication, smoother approvals, better momentum.
             </p>
           </div>
           <div className="membership-content-holder">
@@ -723,12 +719,11 @@ export default function Home() {
             </div>
             <div className="redbox">
               <h5 className="text-4 heading">
-                <strong>                AviaN speed delivery
-</strong>
+                <strong>In Sync, Always</strong>
               </h5>
             </div>
             <p className="text-5 membershipbenefits">
-              Ask today, get tomorrow. We log faster turnarounds than any other agency in our fold.
+              Like working with your own team, just without the extra chairs.
             </p>
           </div>
           <div className="membership-content-holder">
@@ -737,56 +732,11 @@ export default function Home() {
             </div>
             <div className="redbox">
               <h5 className="text-4 heading">
-                <strong>                No contracts ever
-</strong>
+                <strong>Built for What’s Next</strong>
               </h5>
             </div>
             <p className="text-5 membershipbenefits">
-              No calls, no SOWs, no headaches. Only convenience breeding exceptional designs.
-            </p>
-          </div>
-        </div>
-        <div className="box-holder contentholder">
-          <div className="membership-content-holder">
-            <div className="_640ac8dd69d0331684e65e89_7-svg-fill">
-              <img src="https://cdn.prod.website-files.com/5fb6d8b8754777e14ddca278/65619dc25367b4bf91620d61_Vectors-Wrapper.svg" loading="lazy" width="32.798824310302734" height="32.80002975463867" alt="" className="vectors-wrapper-3" />
-            </div>
-            <div className="redbox">
-              <h5 className="text-4 heading">
-                <strong>                Affordable pricing
-</strong>
-              </h5>
-            </div>
-            <p className="text-5 membershipbenefits">
-              Senior design talent at a fraction of the cost. Just one mid-range dinner a day!
-            </p>
-          </div>
-          <div className="membership-content-holder">
-            <div className="_640ac8dd69d0331684e65e89_7-svg-fill">
-              <img src="https://cdn.prod.website-files.com/5fb6d8b8754777e14ddca278/65619dc25367b4bf91620d61_Vectors-Wrapper.svg" loading="lazy" width="32.798824310302734" height="32.80002975463867" alt="" className="vectors-wrapper-3" />
-            </div>
-            <div className="redbox">
-              <h5 className="text-4 heading">
-                <strong>                Async communication
-</strong>
-              </h5>
-            </div>
-            <p className="text-5 membershipbenefits">
-              No unnecessary meetings, so we can hatch more design work for you.
-            </p>
-          </div>
-          <div className="membership-content-holder">
-            <div className="_640ac8dd69d0331684e65e89_7-svg-fill">
-              <img src="https://cdn.prod.website-files.com/5fb6d8b8754777e14ddca278/65619dc25367b4bf91620d61_Vectors-Wrapper.svg" loading="lazy" width="32.798824310302734" height="32.80002975463867" alt="" className="vectors-wrapper-3" />
-            </div>
-            <div className="redbox">
-              <h5 className="text-4 heading">
-                <strong>                Prompt &amp; reliable
-</strong>
-              </h5>
-            </div>
-            <p className="text-5 membershipbenefits">
-              Our birds squeak back at your queries. They ensure it’s resolved swiftly every damn time.
+              Content that keeps up with your brand as it evolves.
             </p>
           </div>
         </div>
