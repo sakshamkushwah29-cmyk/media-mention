@@ -18,90 +18,91 @@ export default function Home() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
-    // GSAP ScrollTrigger & Reveal Animations
-    const ctx = gsap.context(() => {
-      // 1. Hero Entrance Animation
-      gsap.from('.hero-section .mainusp', {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.1,
-      });
+    let ctx;
+    const timer = setTimeout(() => {
+      ctx = gsap.context(() => {
+        const safeFrom = (targetSelector, triggerSelector, vars) => {
+          const targets = document.querySelectorAll(targetSelector);
+          if (targets.length === 0) return;
+          const config = { ...vars };
+          if (triggerSelector) {
+            const triggerEl = document.querySelector(triggerSelector);
+            if (triggerEl) {
+              config.scrollTrigger = {
+                trigger: triggerEl,
+                start: 'top 85%',
+                ...vars.scrollTrigger,
+              };
+            }
+          }
+          gsap.from(targets, config);
+        };
 
-      // 2. Continuous Floating Ambient Motion on Illustrations
-      gsap.to('.illustrationholder img', {
-        y: -14,
-        duration: 2.8,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      });
+        // 1. Hero Entrance Animation
+        safeFrom('.hero-section .mainusp', null, {
+          opacity: 0,
+          y: 40,
+          duration: 1,
+          ease: 'power3.out',
+        });
 
-      // 3. 3 Easy Steps Staggered Reveal
-      gsap.from('.get-started-in-info', {
-        scrollTrigger: {
-          trigger: '#3-easy-steps',
-          start: 'top 80%',
-        },
-        opacity: 0,
-        y: 45,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power2.out',
-      });
+        // 2. Continuous Floating Ambient Motion on Illustrations
+        const imgs = document.querySelectorAll('.illustrationholder img');
+        if (imgs.length > 0) {
+          gsap.to(imgs, {
+            y: -14,
+            duration: 2.8,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+          });
+        }
 
-      // 4. Services Header & Accordions Stagger
-      gsap.from('#services .what-we-offer-box', {
-        scrollTrigger: {
-          trigger: '#services',
-          start: 'top 80%',
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: 'power2.out',
-      });
+        // 3. 3 Easy Steps Staggered Reveal
+        safeFrom('.get-started-in-info', '#3-easy-steps', {
+          opacity: 0,
+          y: 45,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power2.out',
+        });
 
-      gsap.from('#services .uui-faq01_accordion', {
-        scrollTrigger: {
-          trigger: '#services .what-we-do-items',
-          start: 'top 85%',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out',
-      });
+        // 4. Services Header & Accordions Stagger
+        safeFrom('#services .what-we-offer-box', '#services', {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
 
-      // 5. Membership Benefits Stagger
-      gsap.from('#membership-benefits .membership-content-holder', {
-        scrollTrigger: {
-          trigger: '#membership-benefits',
-          start: 'top 80%',
-        },
-        opacity: 0,
-        y: 35,
-        scale: 0.97,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power2.out',
-      });
+        safeFrom('#services .uui-faq01_accordion', '#services .what-we-do-items', {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+        });
 
-      // 6. FAQ Section Stagger
-      gsap.from('#faq-section .uui-faq01_accordion', {
-        scrollTrigger: {
-          trigger: '#faq-section',
-          start: 'top 80%',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out',
+        // 5. Membership Benefits Stagger
+        safeFrom('#membership-benefits .membership-content-holder', '#membership-benefits', {
+          opacity: 0,
+          y: 35,
+          scale: 0.97,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out',
+        });
+
+        // 6. FAQ Section Stagger
+        safeFrom('#faq-section .uui-faq01_accordion', '#faq-section', {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+        });
       });
-    });
+    }, 50);
 
     // FAQ / Services accordion functionality
     const accordions = document.querySelectorAll('.uui-faq01_accordion');
@@ -174,7 +175,8 @@ export default function Home() {
     }
 
     return () => {
-      ctx.revert();
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
       accordions.forEach((acc) => {
         const question = acc.querySelector('.uui-faq01_question');
         if (question && question.__clickHandler) {
