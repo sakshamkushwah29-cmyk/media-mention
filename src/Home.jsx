@@ -652,10 +652,10 @@ export default function Home() {
       <div className="container1440 membership-benefits">
         <div className="box-holder">
           <h2 words-slide-from-right="" text-split="" className="heading-2-you-re-in-good-company memebershipbenefits">
-            membership benefits
+            Partnership Benefits
           </h2>
           <p letters-slide-down="" text-split="" className="text-3 benefits">
-            Brand is everythin&#39; , we help you build one, through design
+            Brand is Everything, We help you build one.
           </p>
         </div>
         <div className="box-holder contentholder">
