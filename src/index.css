@@ -327,5 +327,12 @@ svg path[fill="#dc3438"] {
   display: inline !important;
 }
 
+/* Pull + sign right next to 100 with zero space gap */
+.plus-tight {
+  margin-left: -0.14em !important;
+  display: inline-block !important;
+}
+
+
 
 
