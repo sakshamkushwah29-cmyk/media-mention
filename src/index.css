@@ -317,10 +317,12 @@ svg path[fill="#dc3438"] {
   padding: 6px 16px !important;
 }
 
-/* Ensure the number 100 uses the exact same font as the rest of the text */
+/* Ensure the number 100+ uses the exact same font as the rest of the text and stays joined */
 .redspan {
   font-family: inherit !important;
   font-weight: inherit !important;
   color: #9762fd !important;
+  white-space: nowrap !important;
 }
+
 
