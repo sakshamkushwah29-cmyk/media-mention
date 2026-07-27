@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home from './Home';
 import CaseStudy from './CaseStudy';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   useEffect(() => {
@@ -13,14 +17,15 @@ export default function App() {
       smoothWheel: true,
     });
 
-    let animationFrameId;
+    // Synchronize Lenis smooth scroll with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
 
-    function raf(time) {
-      lenis.raf(time);
-      animationFrameId = requestAnimationFrame(raf);
-    }
+    const tickerCb = (time) => {
+      lenis.raf(time * 1000);
+    };
 
-    animationFrameId = requestAnimationFrame(raf);
+    gsap.ticker.add(tickerCb);
+    gsap.ticker.lagSmoothing(0);
 
     // Global smooth scroll handling for internal anchor links
     const handleAnchorClick = (e) => {
@@ -41,7 +46,7 @@ export default function App() {
 
     return () => {
       document.removeEventListener('click', handleAnchorClick);
-      cancelAnimationFrame(animationFrameId);
+      gsap.ticker.remove(tickerCb);
       lenis.destroy();
     };
   }, []);
