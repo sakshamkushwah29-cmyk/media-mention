@@ -510,12 +510,7 @@ export default function Home() {
       <div className="container1440 trustedby">
         <div className="mainusp-holder trustedbytxt">
           <h1 words-slide-from-right="" text-split="" className="mainusp trusted-by-text red">
-            Trusted by
-            <span className="redspan">            100
-</span>
-            <span className="text-span">            +
-</span>
-            clients includin&#39; marketing agencies, startups and creators
+            Trusted by <span className="redspan">100+</span> clients includin&#39; marketing agencies, startups and creators
           </h1>
         </div>
         <div className="subheading-cta-holder">
