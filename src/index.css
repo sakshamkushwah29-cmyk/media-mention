@@ -334,6 +334,28 @@ svg path[fill="#dc3438"] {
   display: inline-block !important;
 }
 
+/* FAQ Section Spacing & Line Height Adjustments */
+.uui-faq01_accordion.black {
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding-bottom: 12px !important;
+}
+
+.uui-faq01_question.faq {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  line-height: 1.45 !important;
+}
+
+.text-5.in-what-we-do.faq {
+  line-height: 1.7 !important;
+  padding-top: 14px !important;
+  padding-bottom: 24px !important;
+  letter-spacing: 0.01em !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+
 
 
 
