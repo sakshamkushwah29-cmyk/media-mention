@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import gsap from 'gsap';
@@ -53,6 +54,7 @@ export default function App() {
 
   return (
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/royal-empire" element={<CaseStudy />} />
