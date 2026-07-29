@@ -355,6 +355,31 @@ svg path[fill="#dc3438"] {
   color: rgba(255, 255, 255, 0.88) !important;
 }
 
+/* Media Mention & Feedback Carousel Card Spacing & Styling */
+.uui-testimonial16_component-2 {
+  display: flex !important;
+  gap: 32px !important;
+  padding: 16px 0 !important;
+}
+
+.uui-testimonial16_loop-trigger-2 {
+  display: flex !important;
+  gap: 32px !important;
+}
+
+.uui-testimonial16_content-2 {
+  margin-right: 32px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  padding: 2.2rem !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.uui-testimonial16_content-2:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 40px rgba(151, 98, 253, 0.25) !important;
+}
+
 
 
 
