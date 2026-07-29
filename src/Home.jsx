@@ -1170,19 +1170,16 @@ export default function Home() {
       <div className="container1440 testimonails">
         <div className="box-holder our-works testimonial-head" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
           <div>
-            <div style={{ display: 'inline-block', backgroundColor: 'rgba(235, 126, 61, 0.15)', color: '#eb7e3d', padding: '6px 14px', borderRadius: '20px', fontSize: '14px', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              ★ Media Mention & Feedback
-            </div>
             <h1 words-slide-up="" text-split="" className="top-section-heading testimonail-head" style={{ margin: 0 }}>
               Media Mention &amp;<br />
               Client Feedback
             </h1>
           </div>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <button className="carousel-prev-btn" aria-label="Previous Testimonial" style={{ cursor: 'pointer', padding: '12px 18px', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.08)', color: '#ffffff', fontWeight: 'bold', fontSize: '18px', transition: 'all 0.3s ease' }}>
+          <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+            <button className="carousel-prev-btn" aria-label="Previous Testimonial" style={{ cursor: 'pointer', padding: '12px 20px', borderRadius: '30px', border: 'none', backgroundColor: '#ffffff', color: '#9762fd', fontWeight: 'bold', fontSize: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
               &larr;
             </button>
-            <button className="carousel-next-btn" aria-label="Next Testimonial" style={{ cursor: 'pointer', padding: '12px 18px', borderRadius: '30px', border: 'none', backgroundColor: '#eb7e3d', color: '#ffffff', fontWeight: 'bold', fontSize: '18px', transition: 'all 0.3s ease' }}>
+            <button className="carousel-next-btn" aria-label="Next Testimonial" style={{ cursor: 'pointer', padding: '12px 20px', borderRadius: '30px', border: 'none', backgroundColor: '#ffffff', color: '#9762fd', fontWeight: 'bold', fontSize: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
               &rarr;
             </button>
           </div>
