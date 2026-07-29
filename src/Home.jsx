@@ -1232,10 +1232,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    <strong>                    <em>                    Media Mansion
-</em>
-</strong>
-                    goes above and beyond by taking true ownership of every project. Their commitment to reading our brand&#39;s essence was evident throughout our collaboration. They did not just work for us- they worked with us. We obtained design outcomes reflecting a deep understanding of our brand and its goals.
+                    Media Mansion goes above and beyond by taking true ownership of every project. Their commitment to reading our brand&#39;s essence was evident throughout our collaboration. They did not just work for us- they worked with us. We obtained design outcomes reflecting a deep understanding of our brand and its goals.
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
@@ -1301,10 +1298,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    <strong>                    <em>                    Media Mansion
-</em>
-                    feels like a family without which nothing is the same. The creativity, effort, dedication, and, most importantly, love that they bear for us and our brands is the best thing about them. From the quality of our photographic and video content to copywriting, everybody on the team always brings their A Game.
-</strong>
+                    Media Mansion feels like a family without which nothing is the same. The creativity, effort, dedication, and, most importantly, love that they bear for us and our brands is the best thing about them. From the quality of our photographic and video content to copywriting, everybody on the team always brings their A Game.
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
