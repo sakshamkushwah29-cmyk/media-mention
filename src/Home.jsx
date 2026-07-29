@@ -101,6 +101,48 @@ export default function Home() {
           stagger: 0.1,
           ease: 'power2.out',
         });
+
+        // 7. Media Mentions & Feedback GSAP Carousel Marquee & Navigation
+        const carouselTrack = document.querySelector('.uui-testimonial16_component-2');
+        if (carouselTrack) {
+          carouselTrack.style.overflow = 'hidden';
+          carouselTrack.style.width = '100%';
+
+          const loopTriggers = carouselTrack.querySelectorAll('.uui-testimonial16_loop-trigger-2');
+          
+          let currentX = 0;
+          const stepSize = 400; // pixels to scroll on click
+
+          const loopTween = gsap.to(loopTriggers, {
+            xPercent: -50,
+            duration: 35,
+            ease: 'none',
+            repeat: -1,
+          });
+
+          carouselTrack.addEventListener('mouseenter', () => loopTween.pause());
+          carouselTrack.addEventListener('mouseleave', () => loopTween.play());
+
+          const prevBtn = document.querySelector('.carousel-prev-btn');
+          const nextBtn = document.querySelector('.carousel-next-btn');
+
+          if (nextBtn) {
+            nextBtn.onclick = () => {
+              loopTween.pause();
+              currentX -= stepSize;
+              gsap.to(loopTriggers, { x: currentX, duration: 0.6, ease: 'power2.out' });
+            };
+          }
+
+          if (prevBtn) {
+            prevBtn.onclick = () => {
+              loopTween.pause();
+              currentX += stepSize;
+              if (currentX > 0) currentX = 0;
+              gsap.to(loopTriggers, { x: currentX, duration: 0.6, ease: 'power2.out' });
+            };
+          }
+        }
       });
     }, 50);
 
@@ -1126,12 +1168,24 @@ export default function Home() {
     </section>
     <section className="testimonials">
       <div className="container1440 testimonails">
-        <div className="box-holder our-works testimonial-head">
-          <h1 words-slide-up="" text-split="" className="top-section-heading testimonail-head">
-            What our clients
-            <br />
-            are chirpin&#39;
-          </h1>
+        <div className="box-holder our-works testimonial-head" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+          <div>
+            <div style={{ display: 'inline-block', backgroundColor: 'rgba(235, 126, 61, 0.15)', color: '#eb7e3d', padding: '6px 14px', borderRadius: '20px', fontSize: '14px', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              ★ Media Mention & Feedback
+            </div>
+            <h1 words-slide-up="" text-split="" className="top-section-heading testimonail-head" style={{ margin: 0 }}>
+              Media Mention &amp;<br />
+              Client Feedback
+            </h1>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <button className="carousel-prev-btn" aria-label="Previous Testimonial" style={{ cursor: 'pointer', padding: '12px 18px', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.08)', color: '#ffffff', fontWeight: 'bold', fontSize: '18px', transition: 'all 0.3s ease' }}>
+              &larr;
+            </button>
+            <button className="carousel-next-btn" aria-label="Next Testimonial" style={{ cursor: 'pointer', padding: '12px 18px', borderRadius: '30px', border: 'none', backgroundColor: '#eb7e3d', color: '#ffffff', fontWeight: 'bold', fontSize: '18px', transition: 'all 0.3s ease' }}>
+              &rarr;
+            </button>
+          </div>
         </div>
         <section data-w-id="ed10074a-0885-42d0-b0cb-be396d9b432c" className="uui-section_testimonial16-2">
           <div className="uui-padding-vertical-xhuge-2">
@@ -1181,7 +1235,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    <strong>                    <em>                    Thinkin’Birds
+                    <strong>                    <em>                    Media Mansion
 </em>
 </strong>
                     goes above and beyond by taking true ownership of every project. Their commitment to reading our brand&#39;s essence was evident throughout our collaboration. They did not just work for us- they worked with us. We obtained design outcomes reflecting a deep understanding of our brand and its goals.
@@ -1250,9 +1304,9 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    <strong>                    <em>                    Thinkin’
+                    <strong>                    <em>                    Media Mansion
 </em>
-                    Birds feels like a family without which nothing is the same. The creativity, effort, dedication, and, most importantly, love that they bear for us and our brands is the best thing about them. From the quality of our photographic and video content to copywriting, everybody on the team always brings their A Game.
+                    feels like a family without which nothing is the same. The creativity, effort, dedication, and, most importantly, love that they bear for us and our brands is the best thing about them. From the quality of our photographic and video content to copywriting, everybody on the team always brings their A Game.
 </strong>
                   </div>
                   <div className="uui-testimonial16_client-2">
@@ -1384,7 +1438,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Thinkin Birds is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication
+                    Media Mansion is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
@@ -1451,7 +1505,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    &#34;Thinkin’Birds turns branding into brilliance! Their unwavering support, exceeding tight deadlines, and seamless communication set them apart. With dedication, innovation, and a proactive approach, they transform collaboration into a rewarding experience. I wholeheartedly recommend Thinkin’Birds for top-tier branding and marketing services!&#34;
+                    "Media Mansion turns branding into brilliance! Their unwavering support, exceeding tight deadlines, and seamless communication set them apart. With dedication, innovation, and a proactive approach, they transform collaboration into a rewarding experience. I wholeheartedly recommend Media Mansion for top-tier branding and marketing services!"
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
@@ -1517,7 +1571,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Thinkin Birds, a creative family, ensures our brand&#39;s magic with unmatched dedication and clear communication. Mr. Bhavik and Ankita prioritize our needs, delivering top-notch, timely content—effortless collaboration that keeps social media updated and clients engaged with relatable, aesthetic material.
+                    Media Mansion, a creative family, ensures our brand's magic with unmatched dedication and clear communication. Mr. Bhavik and Ankita prioritize our needs, delivering top-notch, timely content—effortless collaboration that keeps social media updated and clients engaged with relatable, aesthetic material.
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
@@ -1583,7 +1637,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    In 2022, I turned my dream IVF center into reality with Thinkin Birds. Led by Mr. Bhavik Mehta, the team surpassed expectations, delivering timely, beautiful ideas. Their dedication and proactive approach earned my trust for future projects. Grateful for their commitment and perfection.
+                    In 2022, I turned my dream IVF center into reality with Media Mansion. Led by Mr. Bhavik Mehta, the team surpassed expectations, delivering timely, beautiful ideas. Their dedication and proactive approach earned my trust for future projects. Grateful for their commitment and perfection.
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
@@ -1648,7 +1702,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Thinkin Birds is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication
+                    Media Mansion is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication
                   </div>
                   <div className="uui-testimonial16_client-2">
                     <div className="uui-testimonial16_client-image-wrapper-2">
