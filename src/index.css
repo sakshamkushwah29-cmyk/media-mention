@@ -74,12 +74,13 @@ html, body {
 }
 
 /* Fix Display Fonts */
-h1, h2, h3, .mainusp, .waves---mega-heading-1, .text-span-3 {
+h1, h2, h3, .mainusp, .waves---mega-heading-1, .text-span-3,
+h1 span, h2 span, h3 span, .mainusp span {
   font-family: 'Mortend', 'Impact', 'Arial Black', sans-serif !important;
   text-transform: uppercase;
 }
 
-h4, h5, h6, p, a, div, span, button {
+h4, h5, h6, p, a, div, button {
   font-family: 'Gilroy', -apple-system, sans-serif;
 }
 

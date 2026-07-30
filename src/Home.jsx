@@ -552,7 +552,7 @@ export default function Home() {
       <div className="container1440 trustedby">
         <div className="mainusp-holder trustedbytxt">
           <h1 words-slide-from-right="" text-split="" className="mainusp trusted-by-text" style={{ color: '#282829' }}>
-            TRUSTED BY MORE THAN <span style={{ color: '#9762fd' }}>100</span> CLIENTS INCLUDIN&#39; MARKETING AGENCIES, STARTUPS AND CREATORS
+            TRUSTED BY MORE THAN <span style={{ color: '#9762fd', fontFamily: 'inherit', fontWeight: 'inherit' }}>100</span> CLIENTS INCLUDIN&#39; MARKETING AGENCIES, STARTUPS AND CREATORS
           </h1>
         </div>
         <div className="subheading-cta-holder">
