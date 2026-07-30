@@ -291,9 +291,9 @@ export default function Home() {
 </a>
             </div>
             <div className="button big">
-              <div className="button-inner p3_small herowhite redbg white">
+              <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }} className="button-inner p3_small herowhite redbg white">
                 Book free demo
-              </div>
+              </a>
               <div className="button-bg red">
               </div>
             </div>
@@ -341,7 +341,7 @@ export default function Home() {
           Portfolio
         </div>
 </a>
-        <a href="https://calendly.com/iambkmehta/ready-to-fly" className="button big inside-nav w-inline-block">        <div className="button-inner p3_small herowhite red inside-nav">
+        <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big inside-nav w-inline-block">        <div className="button-inner p3_small herowhite red inside-nav">
           book free dem0
         </div>
         <div className="button-bg white grey">
@@ -363,7 +363,7 @@ export default function Home() {
             </h5>
           </div>
           <div className="buttonholder">
-            <a href="https://calendly.com/iambkmehta/ready-to-fly" className="button big w-inline-block">            <div className="button-inner p3_small herowhite">
+            <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big w-inline-block">            <div className="button-inner p3_small herowhite">
               Book Exploration Call
             </div>
             <div className="button-bg disabled">
@@ -677,7 +677,7 @@ export default function Home() {
             </h5>
           </div>
           <div className="buttonholder">
-            <a href="https://calendly.com/iambkmehta/ready-to-fly" className="button big w-inline-block">            <div className="button-inner p3_small herowhite getstartedin">
+            <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big w-inline-block">            <div className="button-inner p3_small herowhite getstartedin">
               Book a call
             </div>
             <div className="button-bg red">
@@ -786,7 +786,7 @@ export default function Home() {
           <p letters-slide-down="" text-split="" className="text-3 below-memebrship">
             It’s Easy to Schedule A Demo.
           </p>
-          <a href="https://calendly.com/vivek-sirwani/vivek-1-1" className="button big in-membership w-inline-block">          <div className="button-inner p3_small herowhite redbg memebership">
+          <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big in-membership w-inline-block">          <div className="button-inner p3_small herowhite redbg memebership">
             Book Your FREE Call Now
           </div>
           <div className="button-bg disabled">
@@ -945,13 +945,13 @@ export default function Home() {
         <div className="work-card view-all-button pricing black">
           <p className="work-description white-text">
             Need A Service That&#39;s Missing On The List? Reach Out To Us, Chances Are We Do It Too.
-            <a href="https://calendly.com/vivek-sirwani/vivek-1-1">            <br />
+            <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer">            <br />
 </a>
           </p>
           <img src={starPurple} loading="lazy" width="48" height="48" alt="" className="vectors-wrapper-4" />
           <div className="line horizontal white">
           </div>
-          <a href="https://calendly.com/iambkmehta/ready-to-fly" className="button big w-inline-block">          <div className="button-inner p3_small herowhite redbg memebership">
+          <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big w-inline-block">          <div className="button-inner p3_small herowhite redbg memebership">
             REACH OUT NOW
           </div>
           <div className="button-bg white">
@@ -1037,7 +1037,7 @@ export default function Home() {
             <img src={starPurple} loading="lazy" width="48" height="48" alt="" className="vectors-wrapper-4" />
             <div className="line horizontal contract">
             </div>
-            <a href="https://calendly.com/iambkmehta/ready-to-fly" className="button big w-inline-block">            <div className="button-inner p3_small herowhite redbg memebership">
+            <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big w-inline-block">            <div className="button-inner p3_small herowhite redbg memebership">
               Book free Call
             </div>
             <div className="button-bg disabled">
@@ -1762,7 +1762,7 @@ export default function Home() {
             </h5>
           </div>
           <div className="buttonholder below">
-            <a href="https://calendly.com/iambkmehta/ready-to-fly" className="button big w-inline-block">            <div className="button-inner p3_small herowhite redbg">
+            <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big w-inline-block">            <div className="button-inner p3_small herowhite redbg">
               Book Exploration Call
             </div>
             <div className="button-bg disabled">

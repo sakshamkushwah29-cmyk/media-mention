@@ -131,7 +131,7 @@ export default function CaseStudy() {
           <p className="text-3 below-memebrship">
             <strong>We can hatch it for you too</strong>
           </p>
-          <a href="https://calendly.com/iambkmehta/ready-to-fly" target="_blank" rel="noopener noreferrer" className="button big in-membership w-inline-block">
+          <a href="https://calendly.com/workmediamansion/30min" target="_blank" rel="noopener noreferrer" className="button big in-membership w-inline-block">
             <div className="button-inner p3_small herowhite redbg memebership">BOOK A CALL</div>
             <div className="button-bg disabled"></div>
           </a>
