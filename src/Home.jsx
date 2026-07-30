@@ -17,6 +17,16 @@ export default function Home() {
   // State for mobile nav
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
+  // Ref for Testimonials Carousel scroll
+  const testimonialRef = React.useRef(null);
+
+  const handleTestimonialScroll = (direction) => {
+    if (testimonialRef.current) {
+      const scrollAmount = direction === 'prev' ? -420 : 420;
+      testimonialRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     let ctx;
     const timer = setTimeout(() => {
@@ -1176,542 +1186,263 @@ export default function Home() {
             </h1>
           </div>
           <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
-            <button className="carousel-prev-btn" aria-label="Previous Testimonial" style={{ cursor: 'pointer', padding: '12px 20px', borderRadius: '30px', border: 'none', backgroundColor: '#ffffff', color: '#9762fd', fontWeight: 'bold', fontSize: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
+            <button
+              onClick={() => handleTestimonialScroll('prev')}
+              className="carousel-prev-btn"
+              aria-label="Previous Testimonial"
+              style={{
+                cursor: 'pointer',
+                padding: '12px 22px',
+                borderRadius: '30px',
+                border: 'none',
+                backgroundColor: '#ffffff',
+                color: '#9762fd',
+                fontWeight: 'bold',
+                fontSize: '22px',
+                boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+                transition: 'all 0.3s ease'
+              }}
+            >
               &larr;
             </button>
-            <button className="carousel-next-btn" aria-label="Next Testimonial" style={{ cursor: 'pointer', padding: '12px 20px', borderRadius: '30px', border: 'none', backgroundColor: '#ffffff', color: '#9762fd', fontWeight: 'bold', fontSize: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
+            <button
+              onClick={() => handleTestimonialScroll('next')}
+              className="carousel-next-btn"
+              aria-label="Next Testimonial"
+              style={{
+                cursor: 'pointer',
+                padding: '12px 22px',
+                borderRadius: '30px',
+                border: 'none',
+                backgroundColor: '#ffffff',
+                color: '#9762fd',
+                fontWeight: 'bold',
+                fontSize: '22px',
+                boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+                transition: 'all 0.3s ease'
+              }}
+            >
               &rarr;
             </button>
           </div>
         </div>
-        <section data-w-id="ed10074a-0885-42d0-b0cb-be396d9b432c" className="uui-section_testimonial16-2">
+        <section className="uui-section_testimonial16-2">
           <div className="uui-padding-vertical-xhuge-2">
-            <div className="uui-testimonial16_component-2">
-              <div className="uui-testimonial16_loop-trigger-2">
-                <div className="uui-testimonial16_content-2 black">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
+            <div className="uui-testimonial16_component-2" ref={testimonialRef}>
+              {/* Testimonial 1 */}
+              <div className="uui-testimonial16_content-2 black">
+                <div className="uui-testimonial16_rating-wrapper-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="uui-testimonial16_rating-icon-2 w-embed">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
+                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor"></path>
                         </g>
                       </svg>
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    Media Mansion goes above and beyond by taking true ownership of every project. Their commitment to reading our brand&#39;s essence was evident throughout our collaboration. They did not just work for us- they worked with us. We obtained design outcomes reflecting a deep understanding of our brand and its goals.
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay.jpg" loading="lazy" sizes="(max-width: 3703px) 100vw, 3703px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-500.jpg 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-800.jpg 800w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-1080.jpg 1080w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-1600.jpg 1600w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-2000.jpg 2000w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-2600.jpg 2600w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-3200.jpg 3200w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay.jpg 3703w" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2 white">
-                        Vijay Rathod
-                      </div>
-                      <div className="uui-text-size-small-2 white">
-                        Founder
-                      </div>
-                      <div className="uui-text-size-small-2 white">
-                        at OhNo Xperience
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                <div className="uui-testimonial16_content-2">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Media Mansion feels like a family without which nothing is the same. The creativity, effort, dedication, and, most importantly, love that they bear for us and our brands is the best thing about them. From the quality of our photographic and video content to copywriting, everybody on the team always brings their A Game.
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM.jpeg" loading="lazy" sizes="(max-width: 767px) 100vw, 768px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM-p-500.jpeg 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM.jpeg 768w" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2">
-                        Kanha Jaiswal
-                      </div>
-                      <div className="uui-text-size-small-2">
-                        Founder
-                      </div>
-                      <div className="uui-text-size-small-2">
-                        at Pours N Plate
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
-                    </div>
-                  </div>
+                <div className="uui-heading-xxsmall-2 text-weight-medium white">
+                  Media Mansion goes above and beyond by taking true ownership of every project. Their commitment to reading our brand&#39;s essence was evident throughout our collaboration. They did not just work for us- they worked with us. We obtained design outcomes reflecting a deep understanding of our brand and its goals.
                 </div>
-                <div className="uui-testimonial16_content-2 black">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                <div className="uui-testimonial16_client-2">
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay.jpg" loading="lazy" alt="Vijay Rathod" className="uui-testimonial16_customer-image-2" />
+                  </div>
+                  <div className="uui-testimonial16_client-info-2">
+                    <div className="uui-testimonial16_client-heading-2 white">
+                      Vijay Rathod
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2 white">
+                      Founder
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2 white">
+                      at OhNo Xperience
                     </div>
                   </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    They worked effortlessly to deliver every expectation that I had of my place within the stipulated time, with beautiful ideas that could connect to every patient visiting for treatment. The team was always available for any doubts, confusion, or changes. They were very proactive and prompt. I can’t thank them enough.
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM.jpeg" loading="lazy" sizes="(max-width: 1324px) 100vw, 1324px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM-p-500.jpeg 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM-p-800.jpeg 800w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM.jpeg 1324w" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2 white">
-                        Dr. Soumya Rathi
-                      </div>
-                      <div className="uui-text-size-small-2 white">
-                        Founder
-                        <br />
-                        at Ace Fertility Centre
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                  </div>
-                </div>
-                <div className="uui-testimonial16_content-2">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Media Mansion is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b9d117ff14a338064047_aksha.jpeg" loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2">
-                        Akshit Banta
-                      </div>
-                      <div className="uui-text-size-small-2">
-                        Founder
-                        <br />
-                        at Clences
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
                   </div>
                 </div>
               </div>
-              <div className="uui-testimonial16_loop-trigger-2">
-                <div className="uui-testimonial16_content-2 black">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
+
+              {/* Testimonial 2 */}
+              <div className="uui-testimonial16_content-2">
+                <div className="uui-testimonial16_rating-wrapper-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="uui-testimonial16_rating-icon-2 w-embed">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
+                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor"></path>
                         </g>
                       </svg>
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                  ))}
+                </div>
+                <div className="uui-heading-xxsmall-2 text-weight-medium">
+                  Media Mansion feels like a family without which nothing is the same. The creativity, effort, dedication, and, most importantly, love that they bear for us and our brands is the best thing about them. From the quality of our photographic and video content to copywriting, everybody on the team always brings their A Game.
+                </div>
+                <div className="uui-testimonial16_client-2">
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM.jpeg" loading="lazy" alt="Kanha Jaiswal" className="uui-testimonial16_customer-image-2" />
+                  </div>
+                  <div className="uui-testimonial16_client-info-2">
+                    <div className="uui-testimonial16_client-heading-2">
+                      Kanha Jaiswal
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2">
+                      Founder
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2">
+                      at Pours N Plate
                     </div>
                   </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    "Media Mansion turns branding into brilliance! Their unwavering support, exceeding tight deadlines, and seamless communication set them apart. With dedication, innovation, and a proactive approach, they transform collaboration into a rewarding experience. I wholeheartedly recommend Media Mansion for top-tier branding and marketing services!"
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay.jpg" loading="lazy" sizes="(max-width: 3703px) 100vw, 3703px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-500.jpg 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-800.jpg 800w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-1080.jpg 1080w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-1600.jpg 1600w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-2000.jpg 2000w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-2600.jpg 2600w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay-p-3200.jpg 3200w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b3b51390246f60bdb2b4_Vijay.jpg 3703w" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2 white">
-                        Vijay Rathod
-                      </div>
-                      <div className="uui-text-size-small-2 white">
-                        Founder
-                      </div>
-                      <div className="uui-text-size-small-2 white">
-                        at OhNo Xperience
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
-                    </div>
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
                   </div>
                 </div>
-                <div className="uui-testimonial16_content-2">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="uui-testimonial16_content-2 black">
+                <div className="uui-testimonial16_rating-wrapper-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="uui-testimonial16_rating-icon-2 w-embed">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
+                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor"></path>
                         </g>
                       </svg>
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                  ))}
+                </div>
+                <div className="uui-heading-xxsmall-2 text-weight-medium white">
+                  They worked effortlessly to deliver every expectation that I had of my place within the stipulated time, with beautiful ideas that could connect to every patient visiting for treatment. The team was always available for any doubts, confusion, or changes. They were very proactive and prompt. I can’t thank them enough.
+                </div>
+                <div className="uui-testimonial16_client-2">
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM.jpeg" loading="lazy" alt="Dr. Soumya Rathi" className="uui-testimonial16_customer-image-2" />
+                  </div>
+                  <div className="uui-testimonial16_client-info-2">
+                    <div className="uui-testimonial16_client-heading-2 white">
+                      Dr. Soumya Rathi
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2 white">
+                      Founder
+                      <br />
+                      at Ace Fertility Centre
                     </div>
                   </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Media Mansion, a creative family, ensures our brand's magic with unmatched dedication and clear communication. Mr. Bhavik and Ankita prioritize our needs, delivering top-notch, timely content—effortless collaboration that keeps social media updated and clients engaged with relatable, aesthetic material.
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM.jpeg" loading="lazy" sizes="(max-width: 767px) 100vw, 768px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM-p-500.jpeg 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b4fb93c4c6592d439ec9_WhatsApp%20Image%202023-12-19%20at%209.17.04%20PM.jpeg 768w" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2">
-                        Kanha Jaiswal
-                      </div>
-                      <div className="uui-text-size-small-2">
-                        Founder
-                      </div>
-                      <div className="uui-text-size-small-2">
-                        at Pours N Plate
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
-                    </div>
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
                   </div>
                 </div>
-                <div className="uui-testimonial16_content-2 black">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
+              </div>
+
+              {/* Testimonial 4 */}
+              <div className="uui-testimonial16_content-2">
+                <div className="uui-testimonial16_rating-wrapper-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="uui-testimonial16_rating-icon-2 w-embed">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
+                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor"></path>
                         </g>
                       </svg>
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                  ))}
+                </div>
+                <div className="uui-heading-xxsmall-2 text-weight-medium">
+                  Media Mansion is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication.
+                </div>
+                <div className="uui-testimonial16_client-2">
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b9d117ff14a338064047_aksha.jpeg" loading="lazy" alt="Akshit Banta" className="uui-testimonial16_customer-image-2" />
+                  </div>
+                  <div className="uui-testimonial16_client-info-2">
+                    <div className="uui-testimonial16_client-heading-2">
+                      Akshit Banta
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2">
+                      Founder
+                      <br />
+                      at Clences
                     </div>
                   </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium white">
-                    In 2022, I turned my dream IVF center into reality with Media Mansion. Led by Mr. Bhavik Mehta, the team surpassed expectations, delivering timely, beautiful ideas. Their dedication and proactive approach earned my trust for future projects. Grateful for their commitment and perfection.
-                  </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM.jpeg" loading="lazy" sizes="(max-width: 1324px) 100vw, 1324px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM-p-500.jpeg 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM-p-800.jpeg 800w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b822a3ad832602bb43b5_WhatsApp%20Image%202023-12-20%20at%207.55.04%20PM.jpeg 1324w" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2 white">
-                        Dr. Soumya Rathi
-                      </div>
-                      <div className="uui-text-size-small-2 white">
-                        Founder
-                        <br />
-                        at Ace Fertility Centre
-                      </div>
-                    </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
-                    </div>
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
                   </div>
                 </div>
-                <div className="uui-testimonial16_content-2">
-                  <div className="uui-testimonial16_rating-wrapper-2">
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
+              </div>
+
+              {/* Testimonial 5 (Added) */}
+              <div className="uui-testimonial16_content-2 black">
+                <div className="uui-testimonial16_rating-wrapper-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="uui-testimonial16_rating-icon-2 w-embed">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
+                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor"></path>
                         </g>
                       </svg>
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                  ))}
+                </div>
+                <div className="uui-heading-xxsmall-2 text-weight-medium white">
+                  Media Mansion completely transformed our visual identity and social strategy. Their attention to detail, lightning-fast execution, and creative storytelling helped us scale our brand reach by 3x within just two months. Hands down the best design team we&#39;ve ever worked with!
+                </div>
+                <div className="uui-testimonial16_client-2">
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" loading="lazy" alt="Ananya Sharma" className="uui-testimonial16_customer-image-2" style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover' }} />
+                  </div>
+                  <div className="uui-testimonial16_client-info-2">
+                    <div className="uui-testimonial16_client-heading-2 white">
+                      Ananya Sharma
                     </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="uui-testimonial16_rating-icon-2 w-embed">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_28_8746)">
-                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor">
-                          </path>
-                        </g>
-                      </svg>
+                    <div className="uui-text-size-small-2 white">
+                      Founder &amp; CEO
+                      <br />
+                      at Velvet &amp; Oak Lifestyle
                     </div>
                   </div>
-                  <div className="uui-heading-xxsmall-2 text-weight-medium">
-                    Media Mansion is an exceptional agency that handled all my branding and product design with expertise. Their understanding of UI/UX science and a team of senior product designers set them apart. Bhavik, a veteran, showcases brilliant branding and design acumen. Highly recommended for their superb speed, reliability, and prompt communication
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
                   </div>
-                  <div className="uui-testimonial16_client-2">
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6585b9d117ff14a338064047_aksha.jpeg" loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
+                </div>
+              </div>
+
+              {/* Testimonial 6 (Added) */}
+              <div className="uui-testimonial16_content-2">
+                <div className="uui-testimonial16_rating-wrapper-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="uui-testimonial16_rating-icon-2 w-embed">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clipPath="url(#clip0_28_8746)">
+                          <path d="M9.53834 1.60996C9.70914 1.19932 10.2909 1.19932 10.4617 1.60996L12.5278 6.57744C12.5998 6.75056 12.7626 6.86885 12.9495 6.88383L18.3123 7.31376C18.7556 7.3493 18.9354 7.90256 18.5976 8.19189L14.5117 11.6919C14.3693 11.8139 14.3071 12.0053 14.3506 12.1876L15.5989 17.4208C15.7021 17.8534 15.2315 18.1954 14.8519 17.9635L10.2606 15.1592C10.1006 15.0615 9.89938 15.0615 9.73937 15.1592L5.14806 17.9635C4.76851 18.1954 4.29788 17.8534 4.40108 17.4208L5.64939 12.1876C5.69289 12.0053 5.6307 11.8139 5.48831 11.6919L1.40241 8.19189C1.06464 7.90256 1.24441 7.3493 1.68773 7.31376L7.05054 6.88383C7.23744 6.86885 7.40024 6.75056 7.47225 6.57744L9.53834 1.60996Z" fill="currentColor"></path>
+                        </g>
+                      </svg>
                     </div>
-                    <div className="uui-testimonial16_client-info-2">
-                      <div className="uui-testimonial16_client-heading-2">
-                        Akshit Banta
-                      </div>
-                      <div className="uui-text-size-small-2">
-                        Founder
-                        <br />
-                        at Clences
-                      </div>
+                  ))}
+                </div>
+                <div className="uui-heading-xxsmall-2 text-weight-medium">
+                  Working with Media Mansion has been a game-changer. They don&#39;t just deliver stunning designs and video reels; they act as a true strategic partner who deeply understands product positioning and growth dynamics. Couldn&#39;t recommend them highly enough!
+                </div>
+                <div className="uui-testimonial16_client-2">
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop" loading="lazy" alt="Rahul Verma" className="uui-testimonial16_customer-image-2" style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover' }} />
+                  </div>
+                  <div className="uui-testimonial16_client-info-2">
+                    <div className="uui-testimonial16_client-heading-2">
+                      Rahul Verma
                     </div>
-                    <div className="uui-testimonial16_client-image-wrapper-2">
-                      <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2" />
+                    <div className="uui-text-size-small-2">
+                      Co-Founder &amp; CMO
+                      <br />
+                      at Pulse Media Labs
                     </div>
+                  </div>
+                  <div className="uui-testimonial16_client-image-wrapper-2">
+                    <img src={starPurple} loading="lazy" alt="" className="uui-testimonial16_customer-image-2 star" />
                   </div>
                 </div>
               </div>
