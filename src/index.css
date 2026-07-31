@@ -106,16 +106,19 @@ a, button, .button-inner, .work-card, .uui-faq01_question {
   padding: 20px 0;
   border-top: none !important;
   border-bottom: none !important;
+  display: flex !important;
 }
 
 .image-strip {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 45s linear infinite;
+  display: flex !important;
+  width: max-content !important;
+  flex-shrink: 0 !important;
+  animation: marquee-scroll 35s linear infinite !important;
+  will-change: transform;
 }
 
 .image-strip:hover {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 
 .image-item {
@@ -137,7 +140,7 @@ a, button, .button-inner, .work-card, .uui-faq01_question {
 
 @keyframes marquee-scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-100%); }
 }
 
 
