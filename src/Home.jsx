@@ -22,10 +22,43 @@ export default function Home() {
 
   const handleTestimonialScroll = (direction) => {
     if (testimonialRef.current) {
-      const scrollAmount = direction === 'prev' ? -420 : 420;
-      testimonialRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const container = testimonialRef.current;
+      const cardWidth = 400;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      
+      if (direction === 'next') {
+        if (container.scrollLeft + cardWidth >= maxScroll - 20) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      } else {
+        if (container.scrollLeft <= 20) {
+          container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        }
+      }
     }
   };
+
+  // Auto-scroll testimonials smoothly every 4.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (testimonialRef.current) {
+        const container = testimonialRef.current;
+        const cardWidth = 400;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        if (container.scrollLeft + cardWidth >= maxScroll - 20) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     let ctx;
