@@ -393,24 +393,13 @@ svg path[fill="#dc3438"] {
   box-shadow: 0 14px 40px rgba(151, 98, 253, 0.25) !important;
 }
 
-/* Explicit Image & Container Border Resets (Remove Top Border and Bottom Black Line) */
+/* Explicit Image & Container Border Resets for Image Strip Wrapper */
 .image-strip-wrapper,
-.image-item,
-.portfolio-carousel,
-.illustrationholder,
-.greyholder,
-.div-container,
-.red-stroke-box,
-.navbar,
-.footer,
-.case-study-page .div-container.color {
+.image-item {
   border-top: none !important;
   border-bottom: none !important;
-}
-
-.image-item {
   border: none !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
 }
 
 /* Trusted By Section Left Alignment */
