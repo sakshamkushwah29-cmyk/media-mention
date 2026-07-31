@@ -441,8 +441,7 @@ export default function Home() {
           <div className="image-item">
             <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6579ac01ba54ee05a0824047_royal.png" loading="lazy" sizes="(max-width: 1680px) 100vw, 1680px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6579ac01ba54ee05a0824047_royal-p-500.png 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6579ac01ba54ee05a0824047_royal-p-800.png 800w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6579ac01ba54ee05a0824047_royal-p-1080.png 1080w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6579ac01ba54ee05a0824047_royal-p-1600.png 1600w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/6579ac01ba54ee05a0824047_royal.png 1680w" alt="" className="carousel-image-2" />
           </div>
-        </div>
-        <div className="image-strip">
+          {/* Duplicate set for seamless continuous marquee loop */}
           <div className="image-item">
             <img src={mediamansionHeroArtwork} loading="lazy" alt="Media Mansion Artwork" className="carousel-image-2" />
           </div>
