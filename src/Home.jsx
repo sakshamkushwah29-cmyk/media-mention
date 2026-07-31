@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import mediamansionLogo from './assets/mediamansion_header_logo.png';
 import mediamansionHeroArtwork from './assets/mediamansion_hero_artwork.png';
 import mediamansionWeirdIsGoodArtwork from './assets/mediamansion_weirdisgood_artwork.png';
+import ourPartneredBrands from './assets/our_partnered_brands.png';
 import starPurple from './assets/star_purple.svg';
 import polygonPurple from './assets/polygon_purple.svg';
 
@@ -483,7 +484,7 @@ export default function Home() {
       </div>
     </section>
     <section className="greyholder">
-      <img src="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients.png" loading="lazy" sizes="(max-width: 2167px) 100vw, 2167px" srcSet="https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients-p-500.png 500w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients-p-800.png 800w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients-p-1080.png 1080w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients-p-1600.png 1600w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients-p-2000.png 2000w, https://cdn.prod.website-files.com/65608907c44a511de5c27bc6/658299a390c952810719c9d3_ourclients.png 2167w" alt="" className="image-12" />
+      <img src={ourPartneredBrands} loading="lazy" alt="Our Partnered Brands" className="image-12" />
     </section>
     <section id="3-easy-steps" className="_3-easy-steps">
       <div className="container1440 _3-easy-steps">
